@@ -53,7 +53,7 @@ export default function Home() {
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-          learn about me and what i am doing
+          learn about me, what i am doing and how it could impact you
           </p>
         </a>
 
