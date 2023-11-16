@@ -1,23 +1,27 @@
+import "../public/kbank.jpg";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 export default function Qrcode() {
-  const image = "images/image-qr-code.png";
+  const images = ["/kbank.jpg"];
   return (
     <>
-      <div class="container flex flex-col justify-center items-center h-screen w-full bg-grey_col-100  ">
-        <section class="container  rounded-lg flex flex-col justify-center items-center mx-7 my-[85px] bg-white w-[320px] h-[497px]  lg:w-[320px] lg:h-[497px] lg:my-[151px] lg:mx-[560px]  ">
-          <div class="container w-[288px] flex flex-col justify-center items-center mt-4 mx-4">
-            <picture class="w-full">
-              <img class="rounded-lg " src={image} alt="QR Code" />
-            </picture>
-            <h1 class="qr-heading text-[#1F314F] mt-6">
-              Improve your front-end skills by building projects
-            </h1>
-            <p class="qr-content text-[#7D889E] mt-4 mb-[40px]">
-              Scan the QR code to visit Frontend Mentor and take your coding
-              skills to the next level
-            </p>
+      {images.map((image, index) => {
+        return (
+          <div
+            className="container flex flex-col justify-center items-center h-screen w-full bg-grey_col-100  "
+            key={`qrcode${index}`}
+          >
+            <section className="container  rounded-lg flex flex-col justify-center items-center mx-7 my-[85px] bg-white w-[320px] h-[497px]  lg:w-[320px] lg:h-[497px] lg:my-[151px] lg:mx-[560px]  ">
+              <div className="container w-[288px] flex flex-col justify-center items-center mt-4 mx-4">
+                <picture className="w-full">
+                  <img className="rounded-lg " src={image} alt="QR Code" />
+                </picture>
+              </div>
+            </section>
           </div>
-        </section>
-      </div>
+        );
+      })}
     </>
   );
 }
