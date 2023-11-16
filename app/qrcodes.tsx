@@ -1,6 +1,6 @@
     export default function qrcodes(){
+const link = "https://google.com"
 return (
-const link = ""
 <>
 <LINK to={link}></LINK>
 </>
